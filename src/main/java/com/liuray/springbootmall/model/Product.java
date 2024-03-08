@@ -2,7 +2,6 @@ package com.liuray.springbootmall.model;
 
 import com.liuray.springbootmall.constant.ProductCategory;
 
-import java.sql.Timestamp;
 import java.util.Date;
 
 public class Product {
@@ -73,16 +72,16 @@ public class Product {
         this.description = description;
     }
 
-    public Date getCreatedDate(Timestamp createdDate) {
-        return this.createdDate;
+    public Date getCreatedDate() {
+        return createdDate;
     }
 
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
     }
 
-    public Date getLastModifiedDate(Timestamp lastModifiedDate) {
-        return this.lastModifiedDate;
+    public Date getLastModifiedDate() {
+        return lastModifiedDate;
     }
 
     public void setLastModifiedDate(Date lastModifiedDate) {
