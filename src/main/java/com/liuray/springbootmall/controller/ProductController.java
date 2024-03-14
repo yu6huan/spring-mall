@@ -1,6 +1,7 @@
 package com.liuray.springbootmall.controller;
 
 import com.liuray.springbootmall.constant.ProductCategory;
+import com.liuray.springbootmall.dto.ProductQueryParams;
 import com.liuray.springbootmall.dto.ProductRequest;
 import com.liuray.springbootmall.model.Product;
 import com.liuray.springbootmall.service.ProductService;
@@ -23,7 +24,11 @@ public class ProductController {
             @RequestParam(required = false) ProductCategory category,
             @RequestParam(required = false) String search
     ) {
-        List<Product> productList = productService.getProducts(category, search);
+        ProductQueryParams productQueryParams = new ProductQueryParams();
+        productQueryParams.setCategory(category);
+        productQueryParams.setSearch(search);
+
+        List<Product> productList = productService.getProducts(productQueryParams);
 
         return ResponseEntity.status(HttpStatus.OK).body(productList);
     }
